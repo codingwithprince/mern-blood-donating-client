@@ -62,7 +62,7 @@ const update = () => {
           `http://localhost:8080/update/${router.query.id}`,
           newDonator
         );
-        router.push("/");
+        router.push("/edit");
       }
     } catch (error) {
       console.log(error);
@@ -196,11 +196,11 @@ const update = () => {
               <option value="A+">A+</option>
               <option value="A-">A-</option>
               <option value="B+">B+</option>
-              <option value="B">B-</option>
+              <option value="B-">B-</option>
               <option value="AB+">AB+</option>
-              <option value="AB">AB-</option>
+              <option value="AB-">AB-</option>
               <option value="O+">O+</option>
-              <option value="O">O-</option>
+              <option value="O-">O-</option>
             </select>
             <select
               value={newDonator.gender}

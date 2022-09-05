@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import DonatorList from '../components/DonatorList'
+import  AllDonatorsByGroup from '../components/AllDonatorsByGroup'
 
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
 
       <main>
          {/* ====== Donator list ====== */}
-          <DonatorList />
+          <AllDonatorsByGroup />
 
       </main>
     </div>

@@ -12,6 +12,10 @@ const menu = [
     link: "/register",
   },
   {
+    name: "edit",
+    link: "/edit",
+  },
+  {
     name: "about",
     link: "/",
   },

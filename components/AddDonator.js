@@ -129,7 +129,9 @@ const AddDonator = () => {
                 type='date'
                 name='lastDonated'
               />
-              <label htmlFor="name" className={`text-zinc-500 capitalize 
+              <label
+              
+              htmlFor="date" className={`text-zinc-500 capitalize 
               absolute left-0 text-xs transition-all duration-300
              -top-3`}>
                Last Donated
@@ -143,11 +145,11 @@ const AddDonator = () => {
                   <option value="A+">A+</option>
                   <option value="A-">A-</option>
                   <option value="B+">B+</option>
-                  <option value="B">B-</option>
+                  <option value="B-">B-</option>
                   <option value="AB+">AB+</option>
-                  <option value="AB">AB-</option>
+                  <option value="AB-">AB-</option>
                   <option value="O+">O+</option>
-                  <option value="O">O-</option>
+                  <option value="O-">O-</option>
               </select>
               <select
               onChange={handleChangeGender}
