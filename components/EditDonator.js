@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import moment from 'moment'
 import {
   Button,
   Container,
@@ -55,14 +56,14 @@ const update = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     try {
       if (router.asPath !== router.route) {
         await axios.put(
           `http://localhost:8080/update/${router.query.id}`,
           newDonator
         );
-        router.push("/edit");
+        // router.push("/edit");
       }
     } catch (error) {
       console.log(error);
@@ -174,8 +175,9 @@ const update = () => {
               className="focus:outline-none appearance-none peer border-b-2 border-zinc-300 focus:border-red-300 pb-2"
               type="date"
               name="lastDonated"
-              value={newDonator.lastDonated}
+              value={moment(newDonator.lastDonated).format('YYYY-MM-DD')}
             />
+            
             <label
               htmlFor="name"
               className={`text-zinc-500 capitalize 

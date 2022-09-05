@@ -26,9 +26,9 @@ export const Navbar = () => {
     <nav className="bg-white sticky flex items-center shadow-lg justify-between top-0 text-white py-3 px-3 md:px-[20%]">
       <div className="logo-area cursor-pointer">
         <h2 className="font-bold text-2xl text-red-500 hidden md:block">
-          Red Rose Mission
+          Red <span className="text-green-500">Rose</span> Mission
         </h2>
-        <h2 className="font-bold text-2xl text-red-500 md:hidden">ReRoMi</h2>
+        <h2 className="font-bold text-2xl text-red-500 md:hidden">Re<span className="text-green-500">Ro</span>Mi</h2>
       </div>
       <div className="search-box rounded-md hidden bg-zinc-200 md:flex items-center gap-0 px-2 w-[300px]">
         <FiSearch className="text-zinc-700" size={20} />

@@ -15,7 +15,7 @@ const Modal = ({setModal , id}) => {
   };
 
   return (
-    <div className='px-5 relative'>
+    <div className='modal'>
         <div className="absolute md:w-[400px] p-2 py-4 bg-white shadow-xl border-2 
         top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
          gap-3 w-full rounded-lg">

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Moment from 'react-moment';
 import 'moment-timezone';
 import { BsPersonBoundingBox } from 'react-icons/bs' 
+import { IoCall } from 'react-icons/io5'
 import axios from 'axios'
 import Spinner from './Spinner'
 
@@ -37,6 +38,9 @@ const SingleInfo = () => {
                     </span></h3>
                     <h3 className='md:text-lg text-sm px-2 text-red-500 even:white odd:bg-yellow-50 rounded-lg'>Blood Group : <span className='text-zinc-500 font-normal uppercase'>{singleDonator.bGroup}</span></h3>
                     <h3 className='md:text-lg text-sm px-2 text-red-500 even:white odd:bg-yellow-50 rounded-lg'>Gender : <span className='text-zinc-500 font-normal uppercase'>{singleDonator.gender}</span></h3>
+                </div>
+                <div className="action flex justify-center">
+                    <a href={`tel:${singleDonator.phone}`} className="bg-green-500 px-3 shadow-lg py-2 gap-2 rounded-md font-semibold text-white text-sm hover:bg-green-600 flex items-center"><IoCall /> Call Now</a>
                 </div>
 
             </div>

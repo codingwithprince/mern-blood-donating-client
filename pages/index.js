@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import  AllDonatorsByGroup from '../components/AllDonatorsByGroup'
+import Eligible from '../components/Eligible'
+import IndexTab from '../components/IndexTab'
 
 
 export default function Home() {
@@ -14,8 +16,9 @@ export default function Home() {
 
       <main>
          {/* ====== Donator list ====== */}
-          <AllDonatorsByGroup />
-
+         <IndexTab />
+          {/* <Eligible />
+          <AllDonatorsByGroup /> */}
       </main>
     </div>
   )
