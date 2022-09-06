@@ -53,7 +53,7 @@ export const Navbar = () => {
           {menu.map((item, index) => (
             <Link href={`${item.link}`} key={index}>
               <li
-                className={`border-b-2 
+                className={`border-b-2 cursor-pointer
               border-transparent transition-all text-center flex flex-col items-center
               duration-300 md:px-4 rounded-md md:py-2 p-2 ${user ? 'hover:bg-green-600' : 'hover:bg-red-600'} ease-in-out`}
               >
