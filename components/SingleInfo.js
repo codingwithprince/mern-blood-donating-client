@@ -27,8 +27,7 @@ const SingleInfo = () => {
 
   return (
     <div className='md:px-[20%] px-3 py-5'>
-        {
-            singleDonator == null ? <Spinner /> : 
+        {singleDonator == null ? <Spinner /> : 
             <div className='md:w-[500px] border-2 text-center shadow-xl rounded-md px-2 md:py-10 py-5 my-6 mx-auto'>
                 <div className="avatar flex justify-center">
                     <BsPersonBoundingBox size={100} className="text-red-500" />
