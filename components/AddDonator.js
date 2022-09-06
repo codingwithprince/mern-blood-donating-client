@@ -1,14 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Button, Container, FormControl, Grid, InputLabel, MenuItem, Paper, Select, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Spinner from "./Spinner"
 import { IoPersonAddSharp} from 'react-icons/io5'
 import axios from 'axios'
+import UserContext from "./context/UserContext";
 
 
 
 const AddDonator = () => {
+  const [user, setUser] = useContext(UserContext)
+  useEffect(()=>{
+    if(!user){
+      router.push('/login')
+    }
+  },[])
+
   const router = useRouter();
   const [newDonator, setNewDonator] = useState({
     name: "",
@@ -19,6 +27,8 @@ const AddDonator = () => {
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('');
   const [loading, setLoading] = useState(false)
+
+  
 
   const handleChangeGroup = (event) => {
     setAge(event.target.value);
@@ -40,7 +50,7 @@ const AddDonator = () => {
     if(newDonator.gender && newDonator.bGroup && newDonator.lastDonated && newDonator.address != "" && newDonator.phone != "" && newDonator.age != "" && newDonator.name != ""){
       try {
         setLoading(true)
-        await axios.post('http://localhost:8080/register', newDonator)
+        await axios.post('https://blood-donator-management.herokuapp.com/register', newDonator)
         setLoading(false)
        
       } catch (error) {

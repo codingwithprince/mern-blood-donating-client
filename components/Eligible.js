@@ -14,7 +14,7 @@ const Eligible = () => {
 
   const router = useRouter();
   useEffect(() => {
-    axios.get("http://localhost:8080/").then((res) => setAllDonators(res.data));
+    axios.get("https://blood-donator-management.herokuapp.com/").then((res) => setAllDonators(res.data));
     filterEligibleDonator();
   }, [allDonators]);
 

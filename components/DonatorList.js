@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Moment from "react-moment";
@@ -10,16 +10,25 @@ import { FcInfo } from "react-icons/fc";
 import axios from "axios";
 import Spinner from "./Spinner";
 import Modal from "./Modal";
+import UserContext from "./context/UserContext";
 
 const DonatorList = () => {
   const [allDonators, setAllDonators] = useState();
   const [modal, setModal] = useState(false)
   const [group, setGroup] = useState('all')
   const [ deleteId, setDeleteId] = useState()
+  const [user, setUser] = useContext(UserContext)
+
 
   const router = useRouter();
+
   useEffect(() => {
-    axios.get("http://localhost:8080/").then((res) => setAllDonators(res.data));
+    if(user){
+      axios.get("https://blood-donator-management.herokuapp.com/").then((res) => setAllDonators(res.data));
+    } else {
+      router.push('/login')
+    }
+
   }, [modal]);
 
   const handleDelete = (id) => {
@@ -40,7 +49,7 @@ const DonatorList = () => {
             className=" 
           font-semibold text-2xl text-center md:text-2xl py-5 text-zinc-600 capitalize"
           >
-            Donators
+            Dashboard
           </h2>
 
           <select 

@@ -7,7 +7,7 @@ const Modal = ({setModal , id}) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/delete/${id}`);
+      await axios.delete(`https://blood-donator-management.herokuapp.com/delete/${id}`);
       setModal(false)
     } catch (error) {
       console.log(error);
@@ -18,7 +18,7 @@ const Modal = ({setModal , id}) => {
     <div className='modal'>
         <div className="absolute md:w-[400px] p-2 py-4 bg-white shadow-xl border-2 
         top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-         gap-3 w-full rounded-lg">
+         gap-3 rounded-lg w-[85%]">
           <div className="cancel p-2 absolute right-2">
             <ImCross onClick={()=> setModal(false)} className='text-zinc-500 float-right hover:text-zinc-600' />
           </div>

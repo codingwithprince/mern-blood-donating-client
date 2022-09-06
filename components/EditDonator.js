@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import moment from 'moment'
 import {
@@ -17,10 +17,11 @@ import { Box } from "@mui/system";
 import { IoPersonAddSharp } from "react-icons/io5";
 import axios from "axios";
 import Spinner from "./Spinner";
+import UserContext from "./context/UserContext";
 
 const update = () => {
   const router = useRouter();
-
+  const [user, setUser] = useContext(UserContext)
   const [newDonator, setNewDonator] = useState({
     name: "",
     age: "",
@@ -32,13 +33,25 @@ const update = () => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    if (router.asPath !== router.route) {
-      axios
-        .get(`http://localhost:8080/update/${router.query.id}`)
-        .then((res) => setNewDonator(res.data))
-        .catch((error) => console.log(error));
+    if(user){
+      if (router.asPath !== router.route) {
+        axios
+          .get(`https://blood-donator-management.herokuapp.com/update/${router.query.id}`)
+          .then((res) => setNewDonator(res.data))
+          .catch((error) => console.log(error));
+      }
+    } else{
+      router.push('/login')
     }
   }, [router]);
+
+  useEffect(()=>{
+    if(newDonator.name == ""){
+      setLoading(true)
+    }else{
+      setLoading(false)
+    }
+  },[newDonator])
 
   const handleChangeGroup = (event) => {
     setAge(event.target.value);
@@ -61,7 +74,7 @@ const update = () => {
     try {
       if (router.asPath !== router.route) {
         await axios.put(
-          `http://localhost:8080/update/${router.query.id}`,
+          `https://blood-donator-management.herokuapp.com/update/${router.query.id}`,
           newDonator
         );
         setLoading(false)
