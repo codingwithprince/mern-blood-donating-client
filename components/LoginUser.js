@@ -2,13 +2,16 @@ import React from "react";
 
 const LoginUser = () => {
   return (
-    <div className="login-user bg-zinc-800 w-full h-screen absolute z-100 top-0">
+    <div className="login-user bg-zinc-50 w-full h-screen absolute z-100 top-0">
       <div
         className="absolute bg-white top-1/2 left-1/2 transform
          -translate-x-1/2 -translate-y-1/2 login-card border-2 
-         shadow-xl px-3 py-10 md:w-[500px] w-[90%] rounded-md"
+         shadow-xl px-3 py-10 md:w-[500px] w-[90%] rounded-lg"
       >
-        <h3 className="text-center text-zinc-600 font-semibold text-2xl pb-5">
+        <h2 className="font-bold text-2xl text-red-500 text-center py-3">
+          Red <span className="text-green-500">Rose</span> Mission
+        </h2>
+        <h3 className="text-center text-zinc-400 font-semibold text-2xl pb-5">
           Login
         </h3>
 

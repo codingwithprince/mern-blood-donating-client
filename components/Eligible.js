@@ -44,7 +44,7 @@ const Eligible = () => {
         </h2> */}
         <select 
               onChange={onGroupChange}
-              id="underline_select" className="text-md text-zinc-500 border-2 rounded-sm mb-2 float-right hover:text-zinc-600  focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+              id="underline_select" className="text-sm text-zinc-500 border-2 rounded-md px-2 mb-2 float-right hover:text-zinc-600  focus:outline-none focus:ring-0 focus:border-gray-200 peer">
                   <option value="all">All Group</option>
                   <option value="A+">A+</option>
                   <option value="A-">A-</option>

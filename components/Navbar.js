@@ -12,18 +12,19 @@ const menu = [
     link: "/register",
   },
   {
+    name: "login",
+    link: "/login",
+  },
+  {
     name: "edit",
     link: "/edit",
   },
-  {
-    name: "about",
-    link: "/",
-  },
+ 
 ];
 
 export const Navbar = () => {
   return (
-    <nav className="bg-white sticky flex items-center shadow-lg justify-between top-0 text-white py-3 px-3 md:px-[20%]">
+    <nav className="bg-white sticky flex items-center shadow-md justify-between top-0 text-white py-3 px-3 md:px-[20%]">
       <div className="logo-area cursor-pointer">
         <h2 className="font-bold text-2xl text-red-500 hidden md:block">
           Red <span className="text-green-500">Rose</span> Mission

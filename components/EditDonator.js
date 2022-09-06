@@ -29,6 +29,7 @@ const update = () => {
   });
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (router.asPath !== router.route) {
@@ -56,14 +57,15 @@ const update = () => {
   };
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
+    setLoading(true)
     try {
       if (router.asPath !== router.route) {
         await axios.put(
           `http://localhost:8080/update/${router.query.id}`,
           newDonator
         );
-        // router.push("/edit");
+        setLoading(false)
+        
       }
     } catch (error) {
       console.log(error);
@@ -80,7 +82,7 @@ const update = () => {
   return (
     <div className="add-donator px-2 md:px-[20%]">
       {
-        newDonator.name == "" ? <Spinner /> :
+        loading ? <Spinner /> :
       <div className="form flex justify-center rounded-md md:py-10 my-3">
         <form className="md:w-[500px] bg-white w-full shadow-lg py-2 px-5 rounded-md">
           <div className="flex flex-col justify-center gap-3 py-5">
