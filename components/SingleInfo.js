@@ -22,6 +22,7 @@ const SingleInfo = () => {
         }
     },[])
 
+
     const [user, setUser] = useContext(UserContext)
 
   return (
@@ -32,18 +33,30 @@ const SingleInfo = () => {
                 <div className="avatar flex justify-center">
                     <BsPersonBoundingBox size={100} className="text-red-500" />
                 </div>
-                <div className="info py-5 mt-5 md:px-10 px-2 text-left flex flex-col gap-3">
-                    <h3 className='md:text-lg text-sm px-2 text-red-500 even:white odd:bg-yellow-50 rounded-lg'>Name : <span className='text-zinc-500 font-normal uppercase'>{singleDonator.name}</span></h3>
-                    <h3 className='md:text-lg text-sm px-2 text-red-500 even:white odd:bg-yellow-50 rounded-lg'>Age : <span className='text-zinc-500 font-normal uppercase'>{singleDonator.age}</span></h3>
-                    <h3 className='md:text-lg text-sm px-2 text-red-500 even:white odd:bg-yellow-50 rounded-lg'>Address : <span className='text-zinc-500 font-normal uppercase'>{singleDonator.address}</span></h3>
-                    <h3 className='md:text-lg text-sm px-2 text-red-500 even:white odd:bg-yellow-50 rounded-lg'>Phone : <span className='text-zinc-500 font-normal uppercase'>{singleDonator.phone}</span></h3>
-                    <h3 className='md:text-lg text-sm px-2 text-red-500 even:white odd:bg-yellow-50 rounded-lg'>Last Donated : <span className='text-zinc-500 font-normal uppercase'>
-                        <Moment format="DD/MM/YYYY">
+                <div className="info py-3 mt-5 md:px-10 px-5 text-left flex flex-col">
+                    <div className='flex justify-between px-1 even:white odd:bg-yellow-50 py-2'>
+                      <h3 className='md:text-lg text-sm px-2 text-red-500'>Name :</h3><span className='text-zinc-500 font-normal uppercase'>{singleDonator.name}</span>
+                    </div>
+                    <div className='flex justify-between px-1 even:white odd:bg-yellow-50 py-2'>
+                      <h3 className='md:text-lg text-sm px-2 text-red-500'>Age :</h3><span className='text-zinc-500 font-normal uppercase'>{singleDonator.age}</span>
+                    </div>
+                    <div className='flex justify-between px-1 even:white odd:bg-yellow-50 py-2'>
+                      <h3 className='md:text-lg text-sm px-2 text-red-500'>Address :</h3><span className='text-zinc-500 font-normal uppercase'>{singleDonator.address}</span>
+                    </div>
+                    <div className='flex justify-between px-1 even:white odd:bg-yellow-50 py-2'>
+                      <h3 className='md:text-lg text-sm px-2 text-red-500'>Phone :</h3><span className='text-zinc-500 font-normal uppercase'>{singleDonator.phone}</span>
+                    </div>
+                    <div className='flex justify-between px-1 even:white odd:bg-yellow-50 py-2'>
+                      <h3 className='md:text-lg text-sm px-2 text-red-500'>Last Donated :</h3><span className='text-zinc-500 font-normal uppercase'><Moment format="DD/MM/YYYY">
                             {singleDonator.lastDonated}
-                        </Moment>
-                    </span></h3>
-                    <h3 className='md:text-lg text-sm px-2 text-red-500 even:white odd:bg-yellow-50 rounded-lg'>Blood Group : <span className='text-zinc-500 font-normal uppercase'>{singleDonator.bGroup}</span></h3>
-                    <h3 className='md:text-lg text-sm px-2 text-red-500 even:white odd:bg-yellow-50 rounded-lg'>Gender : <span className='text-zinc-500 font-normal uppercase'>{singleDonator.gender}</span></h3>
+                        </Moment></span>
+                    </div>
+                    <div className='flex justify-between px-1 even:white odd:bg-yellow-50 py-2'>
+                      <h3 className='md:text-lg text-sm px-2 text-red-500'>Blood :</h3><span className='text-zinc-500 font-normal uppercase'>{singleDonator.bGroup}</span>
+                    </div>
+                    <div className='flex justify-between px-1 even:white odd:bg-yellow-50 py-2'>
+                      <h3 className='md:text-lg text-sm px-2 text-red-500'>Gender :</h3><span className='text-zinc-500 font-normal uppercase'>{singleDonator.gender}</span>
+                    </div>
                 </div>
                 <div className="action flex justify-center gap-2">
                     <a href={`tel:${singleDonator.phone}`} className="bg-green-500 px-3 shadow-lg py-2 gap-2 rounded-md font-semibold text-white text-sm hover:bg-green-600 flex items-center"><IoCall /> Call Now</a>
