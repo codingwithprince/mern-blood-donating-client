@@ -19,12 +19,12 @@ export const Navbar = () => {
     },
     {
       name: "register",
-      link: "/register",
+      link: `${ user ? '/register' : '/login'}`,
       icon: <RiUserAddFill />
     },
     {
       name: `${user ? "edit" : 'login'}`,
-      link: "/edit",
+      link: `${user ? '/edit' : '/login'}`,
       icon:  user ? <MdAdminPanelSettings /> : <RiLoginCircleFill />
     },
    
