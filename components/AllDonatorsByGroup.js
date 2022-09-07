@@ -48,7 +48,7 @@ const AllDonatorsByGroup = () => {
               </select>
 
           <table className="table text-center table-auto w-full shadow-lg">
-            <thead className="bg-green-200 text-zinc-800">
+            <thead className="bg-red-200 text-zinc-800">
               <tr className="text-xs md:text-lg font-semibold">
                 <td className="p-2">Id</td>
                 <td className="p-2">Name</td>
@@ -69,7 +69,7 @@ const AllDonatorsByGroup = () => {
                 }).map((item, index) => (
                   <tr
                     key={item._id}
-                    className="text-xs md:text-lg border-b-2 text-zinc-700  even:bg-green-50 hover:bg-green-50 odd:bg-white"
+                    className="text-xs md:text-lg border-b-2 text-zinc-700  even:bg-red-50 hover:bg-red-50 odd:bg-white"
                   >
                     <td className="p-2  border-gray-500"> {index + 1}</td>
                     <td className="p-2 hover:underline hover:text-blue-500">

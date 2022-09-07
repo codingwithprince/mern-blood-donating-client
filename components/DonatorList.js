@@ -88,7 +88,7 @@ const DonatorList = () => {
                 }).map((item, index) => (
                   <tr
                     key={item._id}
-                    className="text-xs md:text-lg border-b-1 text-zinc-700 shadow-md border-b-2 hover:bg-red-50 bg-white"
+                    className="text-xs md:text-lg border-b-1 text-zinc-700 shadow-md border-b-2 hover:bg-indigo-50 bg-white"
                   >
                     <td className="p-2  border-gray-500"> {index + 1}</td>
                     <td className="p-2 hover:underline hover:text-blue-500">
