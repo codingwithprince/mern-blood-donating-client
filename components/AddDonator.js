@@ -48,7 +48,7 @@ const AddDonator = () => {
     if(newDonator.gender && newDonator.bGroup && newDonator.lastDonated && newDonator.address != "" && newDonator.phone != "" && newDonator.age != "" && newDonator.name != ""){
       try {
         setLoading(true)
-        await axios.post('https://blood-donator-management.herokuapp.com/register', newDonator)
+        await axios.post('https://redrosemission.onrender.com/register', newDonator)
         setLoading(false)
        
       } catch (error) {
