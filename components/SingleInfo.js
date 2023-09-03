@@ -16,7 +16,7 @@ const SingleInfo = () => {
     
     useEffect(()=>{
         if(router){
-            axios.get(`https://blood-donator-management.herokuapp.com/info/${router.query.id}`)
+            axios.get(`https://redrosemission.onrender.com/info/${router.query.id}`)
             .then(res => setSingleDonator(res.data))
             .catch(error => console.log(error))
         }
