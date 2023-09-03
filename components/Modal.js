@@ -7,7 +7,7 @@ const Modal = ({setModal , id}) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://blood-donator-management.herokuapp.com/delete/${id}`);
+      await axios.delete(`https://redrosemission.onrender.com/delete/${id}`);
       setModal(false)
     } catch (error) {
       console.log(error);
