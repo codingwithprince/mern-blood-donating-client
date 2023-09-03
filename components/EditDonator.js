@@ -23,7 +23,7 @@ const update = () => {
     if(user){
       if (router.asPath !== router.route) {
         axios
-          .get(`https://blood-donator-management.herokuapp.com/update/${router.query.id}`)
+          .get(`https://redrosemission.onrender.com/update/${router.query.id}`)
           .then((res) => setNewDonator(res.data))
           .catch((error) => console.log(error));
       }
@@ -61,7 +61,7 @@ const update = () => {
     try {
       if (router.asPath !== router.route) {
         await axios.put(
-          `https://blood-donator-management.herokuapp.com/update/${router.query.id}`,
+          `https://redrosemission.onrender.com/update/${router.query.id}`,
           newDonator
         );
         setLoading(false)
