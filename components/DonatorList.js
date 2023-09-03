@@ -24,7 +24,7 @@ const DonatorList = () => {
 
   useEffect(() => {
     if(user){
-      axios.get("https://blood-donator-management.herokuapp.com/").then((res) => setAllDonators(res.data));
+      axios.get("https://redrosemission.onrender.com/").then((res) => setAllDonators(res.data));
     } else {
       router.push('/login')
     }
