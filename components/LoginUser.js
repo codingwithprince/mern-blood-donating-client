@@ -22,7 +22,7 @@ const LoginUser = () => {
 
 
   useEffect(()=>{
-    axios.get('https://blood-donator-management.herokuapp.com/user')
+    axios.get('https://redrosemission.onrender.com/user')
     .then(res => setAdminUser(res.data))
   },[])
 
